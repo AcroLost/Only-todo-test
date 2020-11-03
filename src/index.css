@@ -76,7 +76,7 @@ body {
 }
 
 .todo input[type="checkbox"]:checked + .todo__text {
-    background: url(./images/ellipse.png) 5.5px 4px no-repeat;
+    background: url(./images/ellipse.svg) 5.5px 4px no-repeat;
 }
 
 .todo .todo__edit::before {
