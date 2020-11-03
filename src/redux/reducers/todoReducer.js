@@ -1,7 +1,5 @@
-const ADD_TODO = 'todo/ADD_TODO',
-  REMOVE_TODO = 'todo/REMOVE_TODO',
-  UPDATE_TODO = 'todo/UPDATE_TODO',
-  CHECK_TODO = 'todo/CHECK_TODO';
+import { ADD_TODO, CHECK_TODO, REMOVE_TODO, UPDATE_TODO } from "../types/typesTodo"
+
 
 const initialState = {
   todos: [
@@ -61,22 +59,6 @@ const todoReducer = (state = initialState, action) => {
       return state;
 
   }
-}
-
-export const addTodoAC = (label) => {
-  return { type: ADD_TODO, label }
-}
-
-export const removeTodoAC = (todoId) => {
-  return { type: REMOVE_TODO, todoId }
-}
-
-export const updateTodoAC = (todoId, label) => {
-  return { type: UPDATE_TODO, todoId, label }
-}
-
-export const checkTodoAC = (todoId) => {
-  return { type: CHECK_TODO, todoId }
 }
 
 export default todoReducer;

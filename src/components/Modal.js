@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { connect } from "react-redux";
+import { addTodoAC, checkTodoAC, removeTodoAC, updateTodoAC } from "../redux/actions/actionsTodo";
 
-export const Modal = ({ setShowModal, addTodo, editMode, todoModal, updateTodo }) => {
+const Modal = ({ setShowModal, addTodo, editMode, todoModal, updateTodo }) => {
 
   const [todoValue, setTodoValue] = useState(''),
     [textNewTodo, setTextNewTodo] = useState('');
@@ -51,3 +53,14 @@ export const Modal = ({ setShowModal, addTodo, editMode, todoModal, updateTodo }
     </div>
   );
 }
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addTodo: (text) => dispatch(addTodoAC(text)),
+    removeTodo: (id) => dispatch(removeTodoAC(id)),
+    checkTodo: (id) => dispatch(checkTodoAC(id)),
+    updateTodo: (id, text) => dispatch(updateTodoAC(id, text)),
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Modal);

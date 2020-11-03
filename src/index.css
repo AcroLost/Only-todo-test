@@ -63,7 +63,9 @@ body {
     display: flex;
     align-items: center;
 }
-.todo input[type="checkbox"] + .todo__text span {
+
+.todo .todo__text::before {
+    content: "";
     width: 19px;
     height: 19px;
     margin-top: -1px;
@@ -72,9 +74,15 @@ body {
     border-radius: 100%;
     cursor: pointer;
 }
-.todo input[type="checkbox"]:checked + .todo__text span {
-    background: url(./images/ellipse.png) 3.5px 3px no-repeat;
+
+.todo input[type="checkbox"]:checked + .todo__text {
+    background: url(./images/ellipse.png) 5.5px 4px no-repeat;
 }
+
+.todo .todo__edit::before {
+    display: none;
+}
+
 
 .modal {
     position: absolute;
